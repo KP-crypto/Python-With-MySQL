@@ -8,8 +8,8 @@ class DBHelper:
         cur=self.con.cursor()
         cur.execute(query)
         print("table created successfully")
-        cur.close()
-        self.con.close()
+        
+      
 
     ########## Insert Records Into Table ######################
 
@@ -19,6 +19,8 @@ class DBHelper:
         cur.execute(query)
         self.con.commit()
         print('Records saved into table')
+        cur.close()
+        self.con.close()
 
   #################  Fetch User Records ##################
 
@@ -29,6 +31,8 @@ class DBHelper:
         cur.execute(query)
         for row in cur:
             print(row)
+       cur.close()
+        self.con.close()
 
 ################### Update User ######################
 
@@ -38,6 +42,8 @@ class DBHelper:
         cur.execute(query)
         self.con.commit()
         print("Record updated successfully")
+        cur.close()
+        self.con.close()
 
 
 ############## Delete User ##################################
@@ -47,6 +53,8 @@ class DBHelper:
         cur.execute(query)
         self.con.commit()
         print("user deleted successfuly")
+        cur.close()
+        self.con.close()
 
 ########  Main Programme Starts here ##################
 
