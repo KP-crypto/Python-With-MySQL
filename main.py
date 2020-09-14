@@ -8,6 +8,8 @@ class DBHelper:
         cur=self.con.cursor()
         cur.execute(query)
         print("table created successfully")
+        cur.close()
+        self.con.close()
 
     ########## Insert Records Into Table ######################
 
